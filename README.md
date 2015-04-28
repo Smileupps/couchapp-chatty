@@ -27,9 +27,11 @@ Chatty features:
 
 ## Manual install
 
-** Prerequisites **
+**Prerequisites**
 
 * Apache CouchDB: you can download it from the [CouchDB official homepage](http://couchdb.apache.org) or use Smileupps [free CouchDB Hosting service](https://www.smileupps.com/couchdb-hosting)
+
+**Install**
 
 1. Download this couchapp to your local disk
 2. Using your preferred [Couchapp Deployment tool](https://www.smileupps.com/wiki), upload your couchapp folder to your remote CouchDB instance
