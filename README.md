@@ -35,7 +35,7 @@ Chatty features:
 
 1. If it's still in Admin Party, secure your CouchDB instance, by creating your own admin user. Click on *Fix this* in Futon's bottom-right corner
 1. Download this couchapp to your local disk
-1. Using your preferred [Couchapp Deployment tool](https://www.smileupps.com/wiki), upload your couchapp folder to your remote CouchDB instance
+1. Using your preferred [Couchapp Deployment tool](https://www.smileupps.com/wiki), upload your couchapp folder to your remote CouchDB instance, **using *chatty* as database name.**
 1. Choose two domains to serve public UI and admin UI, such as *chattypublic.yourdomain.com* and *chattyadmin.yourdomain.com*  
 1. Adjust your DNS records, or */etc/hosts* file, or *C:\Windows\System32\drivers\etc\hosts* file , to let these domains point directly to your CouchDB instance
 		127.0.0.1  chattypublic.yourdomain.com
