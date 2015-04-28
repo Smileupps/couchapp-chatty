@@ -1,4 +1,4 @@
-# What is Chatty
+# couchapp-chatty
 
 Chatty is a couchapp linked to the [Smileupps Chatty Tutorial](https://www.smileupps/couchapp-tutorial-chatty), to learn building **an instant-messaging web application**, exclusively built on Javascript, HTML and CSS, using **Apache CouchDB as [all-in-one web app server](https://www.smileupps/couchdb-all-in-one-web-app-server)**, to deliver all presentation, business logic and data layers typical of a multi-tier architecture.
 
