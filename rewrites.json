@@ -1,0 +1,84 @@
+[
+  {
+    "method":"GET",
+    "from" : "/:configsecret/:site/_session",
+    "to" : "../../../_session"
+  },
+  {
+    "method":"DELETE",
+    "from" : "/:configsecret/:site/_session",
+    "to" : "../../../_session"
+  },
+  {
+    "method": "GET",
+    "from" : "/:configsecret/:site/owndocs/:k/0",
+    "to": "_list/own_docs_list/own_docs_view",
+    "query": {
+       "startkey": [
+          ":k",
+           {
+           }
+       ],
+       "endkey": [
+          ":k"
+       ],
+       "reduce":"false",
+       "descending": "true",
+       "include_docs": "true"
+    }
+  },
+  {
+    "method" : "GET",
+    "from" : "/:configsecret/:site/owndocs/:k/:since",
+    "to" : "../../_changes",
+    "query" : {
+        "filter":"app/own_docs_filter",
+        "style":"all_docs",
+        "include_docs":"true",
+        "timeout":"25000",
+        "feed":"longpoll",
+        "limit":"50"
+    }
+  },
+  {
+    "method" : "GET",
+    "from" : "/:configsecret/:site/allprofiles",
+    "to" : "_view/allprofiles",
+    "query" : {
+        "include_docs":"true",
+        "reduce":"false"
+    }
+  },  
+  {
+    "method":"GET",
+    "from" : "/:configsecret/:site/common/*",
+    "to" : "common/*"
+  },
+  {
+    "method":"GET",
+    "from" : "/:configsecret/:site/fonts/*",
+    "to" : "common/fonts/*"
+  },
+  {
+    "method":"GET",
+    "from" : "/:configsecret/:site/*",
+    "to" : ":site/*"
+  },
+  {
+    "method":"GET",
+    "from" : "/:configsecret/:site",
+    "to" : ":site/index.html"
+  },
+  {
+    "method":"PUT",
+    "from" : "/:configsecret/:site/:action/:docid",
+    "to" : "_update/put/:docid"
+  },
+  {
+    "method":"PUT",
+    "from" : "/:configsecret/:site/:action",
+    "to" : "_update/put"
+  }
+]
+
+  

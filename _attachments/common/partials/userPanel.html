@@ -1,0 +1,102 @@
+<div class="modal-header">
+
+    <div class="pull-right">
+        <a class="btn btn-default"  ng-click="cancel()"><i class="fa fa-times"></i></a>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li ng-if="!happy.loggedIn" ng-class="{active:isSelected('tab-login')}" >
+            <a href="#tab-login" data-toggle="tab" ng-click="setTab('tab-login')">Sign in</a>
+        </li>
+        <li ng-if="happy.loggedIn" ng-class="{active:isSelected('tab-login')}" >
+            <a href="javascript:void();">{{user.name||'New'}}:</a>
+        </li>
+        <li ng-if="happy.loggedIn" ng-class="{active:isSelected('tab-user')}" >
+            <a href="#tab-user" data-toggle="tab" ng-click="setTab('tab-user')">User</a>
+        </li>
+        <li ng-if="happy.loggedIn && user" ng-class="{active:isSelected('tab-profile')}" >
+            <a href="#tab-profile" data-toggle="tab" ng-click="setTab('tab-profile')">Profile</a>
+        </li>
+    </ul>        
+
+</div>
+<div class="modal-body">
+    <form id="myForm" name="myForm" class="smart-form" method="post" novalidate="novalidate">
+
+        <div class="tab-content">
+            <div ng-show="isSelected('tab-profile')" class="tab-pane" ng-class="{active:isSelected('tab-profile')}" id="tab-profile">
+                <header>User Public Details</header>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Name</label>
+                            <div class="col col-10">
+                                <label class="input"> <i class="icon-append fa fa-user"></i>
+                                    <input type="text" name="name" ng-model="fields.profile.name" placeholder="Name" required>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Website</label>
+                            <div class="col col-10">
+                                <label class="input"> <i class="icon-append fa fa-globe"></i>
+                                    <input type="text" name="url" ng-model="fields.profile.url" placeholder="http://www.example.com">
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+            </div>
+            <div ng-if="isSelected('tab-user')" class="tab-pane" ng-class="{active:isSelected('tab-user')}" id="tab-user">
+                <header>User Private Details</header>
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Username</label>
+                            <div class="col col-10">
+                                <label class="input"> <i class="icon-append fa fa-envelope"></i>
+                                    <input type="text" name="username" ng-model="fields.user.name" placeholder="Username" required>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Password</label>
+                            <div class="col col-10">
+                                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                    <input type="password" name="password" ng-model="fields.user.password" placeholder="Password" required>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">E-mail</label>
+                            <div class="col col-10">
+                                <label class="input"> <i class="icon-append fa fa-email"></i>
+                                    <input type="email" name="password" ng-model="fields.user.email" placeholder="E-mail (optional)" required>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+            </div>
+        </div>
+
+        <footer>
+            <button type="submit" class="btn btn-primary" data-ng-click="submit()" ng-if="isSelected('tab-login')">
+                Sign in
+            </button>
+            <button type="submit" class="btn btn-primary" data-ng-click="submit()" ng-if="isSelected('tab-user')">
+                Save changes
+            </button>
+            <button type="submit" class="btn btn-primary" data-ng-click="submit()" ng-if="isSelected('tab-profile')">
+                Save changes
+            </button>
+        </footer>
+    </form>
+</div>
+
