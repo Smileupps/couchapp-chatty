@@ -32,7 +32,7 @@
     "from" : "/:configsecret/:site/owndocs/:k/:since",
     "to" : "../../_changes",
     "query" : {
-        "filter":"app/own_docs_filter",
+        "filter":"chatty/own_docs_filter",
         "style":"all_docs",
         "include_docs":"true",
         "timeout":"25000",
