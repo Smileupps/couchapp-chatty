@@ -1,7 +1,7 @@
 # Chatty Single Page Application Couchapp
 https://github.com/Smileupps/couchapp-chatty
 
-Chatty is a couchapp linked to the [Smileupps Chatty Tutorial](https://www.smileupps/couchapp-tutorial-chatty), to learn building **an instant-messaging web application**, exclusively built on Javascript, HTML and CSS, using **Apache CouchDB as [all-in-one web app server](https://www.smileupps/couchdb-all-in-one-web-app-server)**, to deliver all presentation, business logic and data layers typical of a multi-tier architecture.
+Chatty is a couchapp linked to the [Smileupps Chatty Tutorial](https://www.smileupps.com/couchapp-tutorial-chatty), to learn building **an instant-messaging web application**, exclusively built on Javascript, HTML and CSS, using **Apache CouchDB as [all-in-one web app server](https://www.smileupps.com/couchdb-all-in-one-web-app-server)**, to deliver all presentation, business logic and data layers typical of a multi-tier architecture.
 
 Chatty includes:
 
@@ -70,4 +70,4 @@ This app is part of [Smileupps Ready to Run Examples](https://www.smileupps.com/
 
         curl -X PUT -k https://couchdb-root-url/chatty/_design/chatty/_rewrite/CONFIGSECRET/backend/user/org.couchdb.user:chatty -d "{\"name\":\"chatty\",\"password\":\"chatty\"}"
 
-
+9. Secure it down all: prevent users from accessing futon or couchdb root directly, by using a proxy(e.g. haproxy) listening on ports 80 and 443, in front of couchdb. Proxy must be configured to forward to CouchDB port only requests with Host Header defined as chattypublic.yourdomain.com or chattyadmin.yourdomain.com domains. Requests without Host Header or with an incorrect value must be rejected by the proxy. In this way, allowed requests will then be handled exactly and only as defined in rewrites.json file defined within your design documents.
